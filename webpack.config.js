@@ -51,13 +51,16 @@ module.exports = {
       },
     ],
   },
+  devServer: {
+    historyApiFallback: true,
+  },
   plugins: [
     new HtmlWebPackPlugin({
       template: './public/index.html',
-      filename: './index.html'
+      filename: './index.html',
     }),
     new MiniCssExtractPlugin({
-      filename:'assets/[name].css',
-    })
-  ]
-}
+      filename: 'assets/[name].css',
+    }),
+  ],
+};
