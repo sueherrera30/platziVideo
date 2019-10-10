@@ -1,9 +1,12 @@
 import React from 'react';
 import '../assets/styles/Components/header.scss';
+import { Link } from 'react-router-dom';
 
 const Header = () => (
   <header className='header'>
-    <img className='header__img' src='../../../public/images/logo-platzi-video-BW2.png' alt='Platzi Video' />
+    <Link to='/'>
+      <img className='header__img' src='../../../public/images/logo-platzi-video-BW2.png' alt='Platzi Video' />
+    </Link>
     <div className='header__menu'>
       <div className='header__menu--profile'>
         <img src='../../../public/images/user-icon.png' alt='' />
