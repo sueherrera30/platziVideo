@@ -8,40 +8,37 @@ import useInitialState from '../hooks/useInitialState';
 import '../assets/styles/App.scss';
 
 const Home = ({ myList, trends, originals }) => {
-  return initialState.length === 0 ? <h1>Loading...</h1> : (
+  return (
     <>
       <Search />
       {myList.length > 0 && (
         <Categories title='Mi Lista'>
-          <Carousel>
-            {myList.map(item =>
-              <CarouselItem key={item.id} {...item} />
-            )}
-          </Carousel>
+        <Carousel>
+          { myList.map((item) =>
+            <CarouselItem key={item.id} {...item} />
+          )}
+        </Carousel>
         </Categories>
       )}
       <Categories title='Tendencias'>
         <Carousel>
-          {myList.trends.map(item =>
-            <CarouselItem key={item.id} {...item} />
-          )}
+          {trends.map((item) => <CarouselItem key={item.id} {...item} />)}
         </Carousel>
       </Categories>
+
       <Categories title='Originales de Platzi Video'>
         <Carousel>
-          {originals.originals.map(item =>
-            <CarouselItem key={item.id} {...item} />
-          )}
+          {originals.map((item) => <CarouselItem key={item.id} {...item} />)}
         </Carousel>
       </Categories>
     </>
   );
 };
-const mapStoreToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    mylist: state.mylist,
+    myList: state.myList,
     trends: state.trends,
     originals: state.originals,
-  }
+  };
 };
-export default connect(mapStoreToProps, null)(Home);
+export default connect(mapStateToProps, null)(Home);

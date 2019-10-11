@@ -10,7 +10,7 @@ const initialState = {
   'user': {},
   // nos ayudará a saber si se esta reproduciendo un video.
   'playing': {},
-  'mylist': [],
+  'myList': [],
   'trends': [
     {
       'id': 2,
