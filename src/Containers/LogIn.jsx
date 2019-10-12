@@ -84,3 +84,5 @@ const mapDispachToProps = {
 // llamamos al segundo paramentro que es el que SE ENCARGA  DE MANEJAR EL DISPACH
 //HACIA LOS PROPS
 export default connect(null, mapDispachToProps)(LogIn);
+
+
