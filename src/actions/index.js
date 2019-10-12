@@ -8,4 +8,8 @@ export const delateFavorite = (payload) => ({
   payload,
 });
 
+export const loginRequest = (payload) => ({
+  type: 'LOGIN_REQUEST',
+  payload,
+});
 

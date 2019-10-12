@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-//importamos use state para poder usar hooks
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { loginRequest } from '../actions';
 import googleIcon from '../assets/static/google-icon.png';
 import twitterIcon from '../assets/static/twitter-icon.png';
 
-const LogIn = () => {
+const LogIn = props => {
   const [form, setValues ] = useState({
     email: '',
   });
-
   const handleInput = (event) => {
     setValues({
       ...form,
@@ -17,7 +17,8 @@ const LogIn = () => {
   };
   const handleSubmit = event => {
     event.preventDefault();
-    console.log(form);
+    props.loginRequest(form);
+    props.history.push('/');
   };
   return (
     <section className='login'>
@@ -76,5 +77,10 @@ const LogIn = () => {
     </section>
   );
 };
-export default LogIn;
-
+// arriba el login se debe pasar por los componentes por medio de props.
+const mapDispachToProps = {
+  loginRequest,
+};
+// llamamos al segundo paramentro que es el que SE ENCARGA  DE MANEJAR EL DISPACH
+//HACIA LOS PROPS
+export default connect(null, mapDispachToProps)(LogIn);

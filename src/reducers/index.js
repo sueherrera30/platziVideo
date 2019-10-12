@@ -10,6 +10,12 @@ const reducer = (state, action) => {
         ...state,
         myList: state.myList.filter(items => items.id !== action.payload)
       }
+    case 'LOGIN_REQUEST':
+      return {
+        ...state,
+        // pasamos objeto que creamos en accion y lo traemos aqui.
+        user: action.payload,
+      }
     default:
       return state;
   }
