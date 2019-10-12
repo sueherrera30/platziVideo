@@ -4,9 +4,8 @@ import gravatar from '../utils/gravatar';
 import '../assets/styles/Components/header.scss';
 import { Link } from 'react-router-dom';
 
-const Header = (props) => {
+const Header = props  => {
   const { user } = props;
-  const hasUser = Object.keys(user).length > 0;
   return (
     <header className='header'>
       <Link to='/'>
@@ -14,10 +13,10 @@ const Header = (props) => {
       </Link>
       <div className='header__menu'>
         <div className='header__menu--profile'>
-          { hasUser ?
-            <img src={gravatar(user.email)} alt={user.email} /> :
-            <img src='../../../public/images/user-icon.png' alt='' />
+          {
+            
           }
+          <img src={} alt='' />
           <p>Perfil</p>
         </div>
         <ul>
@@ -28,7 +27,7 @@ const Header = (props) => {
     </header>
   );
 };
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     user: state.user,
   };
