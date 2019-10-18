@@ -21,8 +21,11 @@ const CarouselItem = (props) => {
   }
   return (
     <div className='carousel-item'>
-      {/* <img className='carousel-item__img' src={cover} alt={title}  /> */}
-      <img className='carousel-item__img' src='https://s3-eu-west-1.amazonaws.com/abandomedia/indie/foto/db_49884_70.jpg' alt='' />
+      <img
+        className='carousel-item__img' 
+        src='https://s3-eu-west-1.amazonaws.com/abandomedia/indie/foto/db_49884_70.jpg' 
+        alt=''
+      />
       <div className='carousel-item__details'>
         <div>
           <Link to={`/player/${id}`}>

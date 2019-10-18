@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import {createStore } from 'redux';
 import App from './routes/App';
 import reducer from './reducers';
-
+ 
 const initialState = {
   // aqui traeremos la data inicial de un usuario.
   'user': {},
@@ -172,12 +172,13 @@ const initialState = {
     },
   ],
 };
-const store = createStore(reducer, initialState)
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || composer;
+const store = createStore(reducer, initialState, composeEnhancers)
 
 ReactDom.render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('app')
+  document.getElementById('app');
 );
 

@@ -26,6 +26,14 @@ const reducer = (state, action) => {
         ...state,
         user: action.payload,
       }
+    case 'GET_VIDEO_SOURCE':
+      return {
+        ...state,
+        // buscaremos el id y se devolverá el que coincida con el paying que mandando-
+        playing: state.treds.find(item => item.id === Number(action.payload))
+        || state.original.find(item => item.id === Number(action.payload))
+        || []
+      }
     default:
       return state;
   }
